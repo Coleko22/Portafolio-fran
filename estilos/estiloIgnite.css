@@ -1,0 +1,45 @@
+/* main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1080px;
+} */
+
+
+
+#contenedor-ignite {
+    text-align: center;
+    margin: auto;
+    width: 1300px;
+    height: 1200px;
+    background-color: black;
+    border-radius: 50px;
+}
+
+p{
+    margin: 0px;
+    margin-top: 50px;
+    font-size: 40px;
+    font-family: "karla", sans-serif;
+    color: white;
+    
+}
+
+h3{
+    color: white;
+    font-family: "karla", sans-serif;
+}
+
+h2 {
+    font-family: "karla", sans-serif;
+    margin-top:50px;
+    color:white;
+    margin-bottom: 0px;
+    font-size: 32px;
+}
+
+img {
+    margin-top: 50px;
+    width: 600px;
+    height: 600px;
+}
