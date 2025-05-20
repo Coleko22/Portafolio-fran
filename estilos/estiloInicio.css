@@ -100,7 +100,7 @@ li a{
     border-radius: 20px;
 }
 
-.ignite {
+.vape {
     width: 500px;
     height: 500px;
     margin-top: 20px;
@@ -116,17 +116,28 @@ li a{
     height: 600px;
 }
 
+.cuadro:hover {
+  box-shadow: 0px 0px 40px 5px white;
+}
+
+a {
+    text-decoration: none;
+}
+
 figcaption {
     font-family: "karla", sans-serif;
     font-size: 32px;
+    padding: 15px;
+    color: black;
 }
 
-#contenedor-ignite {
+#contenedor-vapes {
     padding: 0px;
     margin: 0px;
-    height:1300px;
+    width: 100%;
+    height: 1024px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: red;;
+    justify-content: space-evenly;
+    background-image: url(../Imagenes/ChatGPT\ Image\ 20\ may\ 2025\,\ 10_54_21\ a.m..png);
 }
