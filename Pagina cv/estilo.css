@@ -1,7 +1,19 @@
+body {
+    background-color: red;
+}
+
+main {
+    margin: 100px;
+    padding: 38px;
+    border: 4px solid black;
+    background-color: white;
+}
+
 #presentacion {
     display: flex;
-
+    align-items: center;
 }
+
 
 #info {
     display: flex;
@@ -14,6 +26,7 @@
 #datos-personales li {
     font-size: 20px;
     font-family: "Playfair Display", serif;
+    font-weight: lighter;
 }
 
 h1 {
@@ -30,8 +43,45 @@ h1 {
 
 }
 
+.linea-horizontal {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+}
+
+.linea-vertical {
+  width: 3px; /* grosor */
+  height: 450px; /* altura de la línea */
+  background-color: black;
+  margin: 10px;
+}
+
+#arquitectura {
+    text-align: center;
+    font-size: 55px;
+    margin-top: 0px;
+}
+
+.titulos {
+    font-size: 50px;
+    font-family: "Playfair Display", serif;
+    color: red;
+}
+
+.laburos {
+    font-size: 50px;
+    font-family: "Playfair Display", serif;
+}
+
+h3 {
+    font-weight: lighter;
+    font-size: 25px;
+    font-family: "Playfair Display", serif;
+}
+
 p {
-    font-size: 35px;
+    margin: 0;
+    font-size: 33px;
     font-family: "Playfair Display", serif;
     text-align: center;
 
@@ -55,14 +105,26 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    list-style-type: "- ";
+}
+
+img {
+    width: 450px;
+    height: 450px;
 }
 
 #datos-personales {
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 700px;
     padding:0px;
+}
+
+.resumen-li {
+    font-size: 25px;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
 }
 
 #voluntariado {
