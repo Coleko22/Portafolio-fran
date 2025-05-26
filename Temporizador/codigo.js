@@ -1,6 +1,7 @@
-input = document.getElementById("tempo");
-valorInicial = Number(input.value);
-valorMod = valorInicial;
+    
+let input = document.getElementById("tempo");
+var valorInicial;
+let valorMod = 0;
 
 function reproducirTrompetas() {
     let trompetas = new Audio('Trompeta Militar Despertador.mp3');
@@ -9,9 +10,11 @@ function reproducirTrompetas() {
 
 function empezarTemporizador() {
     
-    input = document.getElementById("tempo");
-    valorInicial = Number(input.value);
-    valorMod = valorInicial;
+    if (valorInicial === undefined) {
+        valorInicial = Number(input.value);
+    }
+    
+    valorMod = Number(input.value);
 
     intervalo = setInterval(() => {
       if (valorMod > 0) {
@@ -19,7 +22,6 @@ function empezarTemporizador() {
         input.value = valorMod;
       } else {
         clearInterval(intervalo);
-        reproducirTrompetas();
         alert("¡Tiempo terminado!");
       }
     }, 1000); // 1000 ms = 1 segundo
@@ -29,9 +31,15 @@ function pararTemporizador() {
     clearInterval(intervalo);
 }
 
-function reiniciarTemporizador() {
+function reanudarTemporizador() {
     valorMod = valorInicial;
     input.value = valorMod;
+}
+
+function reiniciarTemporizador() {
+    valorMod = 0; 
+    input.value = valorMod; 
+    clearInterval(intervalo);
 }
 
 function agregar30() {
