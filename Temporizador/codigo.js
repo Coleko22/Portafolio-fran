@@ -1,4 +1,6 @@
-    
+let button = document.getElementById("play");
+let svgPlay = document.getElementById("svg-play");
+let svgPause = document.getElementById("svg-pausa");
 let input = document.getElementById("tempo");
 let valorInicial = Number(input.value);
 let valorMod = valorInicial;
@@ -7,6 +9,20 @@ let intervalo = null;
 input.addEventListener("input", () => {
     valorInicial = Number(input.value);
     valorMod = valorInicial;
+});
+
+button.addEventListener("click", () => {
+    let isPlayVisible = button.contains(svgPlay);
+
+    if (isPlayVisible) {
+        svgPlay.parentNode.replaceChild(svgPause, svgPlay);
+        svgPause.style.display = 'inline';
+        empezarTemporizador(); 
+    } else {
+        svgPause.parentNode.replaceChild(svgPlay, svgPause);
+        svgPause.style.display = 'none';
+        pararTemporizador(); 
+    }
 });
 
 function empezarTemporizador() {
@@ -39,6 +55,8 @@ function reiniciarTemporizador() {
     input.value = valorMod;
     clearInterval(intervalo);
     intervalo = null;
+    svgPause.parentNode.replaceChild(svgPlay, svgPause);
+    svgPause.style.display = 'none';
 }
 
 function agregar30() {

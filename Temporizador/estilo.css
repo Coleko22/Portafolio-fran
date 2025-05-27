@@ -24,6 +24,10 @@ input {
     border-radius: 20px;
 }
 
+#svg-pausa {
+    display: none;
+}
+
 input::placeholder {
     text-align: center;
 }
@@ -37,7 +41,7 @@ button {
     flex-direction: row;
     justify-content: center;
     padding: 0px;
-    gap: 75px;
+    gap: 85px;
     margin-top: 15px;
 }
 
@@ -68,21 +72,8 @@ button {
     background-color: white;
 }
 
-#stop {
-    width: 220px;
-    padding: 15px;
-    background-color: rgb(98, 213, 255);
-    border: 2px solid black;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-#stop:hover {
-    background-color: white;
-}
-
 #reiniciar {
-    width: 220px;
+    width: 490px;
     padding: 15px;
     background-color: rgb(98, 213, 255);
     border: 2px solid black;
@@ -94,13 +85,6 @@ button {
     background-color: white;
 }
 
-#botones {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 0px;
-    margin-top: 15px;
-}
 
 #play {
     height: 50px;

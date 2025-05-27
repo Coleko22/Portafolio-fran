@@ -13,11 +13,12 @@
             <button id="agregar30" onclick="agregar30()">+30</button>
             <button id="agregar60" onclick="agregar60()">+60</button>
         </div> 
-        <div id="botones">
-            <button id="stop" onclick="pararTemporizador()">Stop</button>
             <button id="reiniciar" onclick="reiniciarTemporizador()">Reiniciar</button>
-        </div>
-        <button id="play" onclick="empezarTemporizador()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M400-280v-400l200 200-200 200Z"/></svg></button>
+        <button id="play" onclick="empezarTemporizador()"><svg id="svg-play" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M400-280v-400l200 200-200 200Z"/></svg></button>
+
+        <svg id="svg-pausa" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M520-200v-560h240v560H520Zm-320 0v-560h240v560H200Zm400-80h80v-400h-80v400Zm-320 0h80v-400h-80v400Zm0-400v400-400Zm320 0v400-400Z"/></svg>
+
+
         <script src="codigo.js"></script>
     </div>
 </body>
