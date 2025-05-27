@@ -1,20 +1,21 @@
     
 let input = document.getElementById("tempo");
-var valorInicial;
-let valorMod = 0;
+let valorInicial = Number(input.value);
+let valorMod = valorInicial;
+let intervalo = null;
 
-function reproducirTrompetas() {
-    let trompetas = new Audio('Trompeta Militar Despertador.mp3');
-    trompetas.play()
-}
+input.addEventListener("input", () => {
+    valorInicial = Number(input.value);
+    valorMod = valorInicial;
+});
 
 function empezarTemporizador() {
+
+    if (intervalo !== null) return;
     
-    if (valorInicial === undefined) {
-        valorInicial = Number(input.value);
+    if (valorMod == 0){
+        valorMod = Number(input.value);
     }
-    
-    valorMod = Number(input.value);
 
     intervalo = setInterval(() => {
       if (valorMod > 0) {
@@ -22,6 +23,7 @@ function empezarTemporizador() {
         input.value = valorMod;
       } else {
         clearInterval(intervalo);
+        intervalo = null;
         alert("¡Tiempo terminado!");
       }
     }, 1000); // 1000 ms = 1 segundo
@@ -29,25 +31,24 @@ function empezarTemporizador() {
 
 function pararTemporizador() {
     clearInterval(intervalo);
-}
-
-function reanudarTemporizador() {
-    valorMod = valorInicial;
-    input.value = valorMod;
+    intervalo = null;
 }
 
 function reiniciarTemporizador() {
-    valorMod = 0; 
-    input.value = valorMod; 
+    valorMod = valorInicial;
+    input.value = valorMod;
     clearInterval(intervalo);
+    intervalo = null;
 }
 
 function agregar30() {
     valorMod = valorMod + 30;
     input.value = valorMod;
+    valorInicial = valorMod;
 }
 
 function agregar60() {
     valorMod = valorMod + 60;
     input.value = valorMod;
+    valorInicial = valorMod;
 }

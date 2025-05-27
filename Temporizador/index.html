@@ -8,14 +8,16 @@
 </head>
 <body>
     <div>
-        <h1>SEGUNDOS</h1>
         <input placeholder="0" inputmode="numeric" id="tempo">
-        <button onclick="agregar30()">+30</button>
-        <button onclick="agregar60()">+60</button>
-        <button onclick="empezarTemporizador()">Play</button>
-        <button onclick="pararTemporizador()">Stop</button>
-        <button onclick="reanudarTemporizador()">Restart</button>
-        <button onclick="reiniciarTemporizador()">Reiniciar</button>
+        <div id="sumadores">
+            <button id="agregar30" onclick="agregar30()">+30</button>
+            <button id="agregar60" onclick="agregar60()">+60</button>
+        </div> 
+        <div id="botones">
+            <button id="stop" onclick="pararTemporizador()">Stop</button>
+            <button id="reiniciar" onclick="reiniciarTemporizador()">Reiniciar</button>
+        </div>
+        <button id="play" onclick="empezarTemporizador()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M400-280v-400l200 200-200 200Z"/></svg></button>
         <script src="codigo.js"></script>
     </div>
 </body>

@@ -21,6 +21,7 @@ input {
     width: 200px;
     text-align: center;
     font-size: 30px;
+    border-radius: 20px;
 }
 
 input::placeholder {
@@ -31,12 +32,100 @@ button {
     padding: 0px 50px;
 }
 
+#sumadores {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0px;
+    gap: 75px;
+    margin-top: 15px;
+}
+
+#agregar30 {
+    width: 200px;
+    padding: 15px;
+    background-color: rgb(98, 213, 255);
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#agregar30:hover {
+    background-color: white;
+}
+
+
+#agregar60 {
+    width: 200px;
+    padding: 15px;
+    background-color: rgb(98, 213, 255);
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#agregar60:hover {
+    background-color: white;
+}
+
+#stop {
+    width: 220px;
+    padding: 15px;
+    background-color: rgb(98, 213, 255);
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#stop:hover {
+    background-color: white;
+}
+
+#reiniciar {
+    width: 220px;
+    padding: 15px;
+    background-color: rgb(98, 213, 255);
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#reiniciar:hover {
+    background-color: white;
+}
+
+#botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0px;
+    margin-top: 15px;
+}
+
+#play {
+    height: 50px;
+    width: 500px;
+    background-color: blue;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#play:hover {
+    background-color: rgba(0, 0, 255, 0.579);
+}
+
+#play svg{
+    width: 50px;
+    height: 50px;
+}
+
 div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    padding: 100px;
-    border: 2px solid black;
+    width: 600px;
+    background-color: rgba(0, 255, 255, 0.579);
+    gap: 10px;
+    padding: 50px;
     border-radius: 30px;
 }
