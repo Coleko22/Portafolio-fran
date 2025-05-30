@@ -21,7 +21,7 @@ function escribirSuma() {
 }
 
 function escribirMultiplicacion() {
-    input.value += "*";
+    input.value += "*"; 
 }
 
 function escribirDivision() {
@@ -33,47 +33,53 @@ function escribirResta() {
 }
 
 function escribirCero() {
-    input.value += 0;
+    input.value += "0";
 }
 
 function escribirUno() {
-    input.value += 1;
+    input.value += "1";
 }
 
 function escribirDos() {
-    input.value += 2;
+    input.value += "2";
 }
 
 function escribirTres() {
-    input.value += 3;
+    input.value += "3";
 }
 
 function escribirCuatro() {
-    input.value += 4;
+    input.value += "4";
 }
 
 function escribirCinco() {
-    input.value += 5;
+    input.value += "5";
 }
 
 function escribirSeis() {
-    input.value += 6;
+    input.value += "6";
 }
 
 function escribirSiete() {
-    input.value += 7;
+    input.value += "7";
 }
 
 function escribirOcho() {
-    input.value += 8;
+    input.value += "8";
 }
 
 function escribirNueve() {
-    input.value += 9;
+    input.value += "9";
+}
+
+function borrarUltimo() {
+    total = input.value;
+    totalBorrado = total.slice(0, -1);
+    input.value = totalBorrado
 }
 
 borrar.addEventListener("click", () => {
-    input.value = "";
+    borrarUltimo();
 })
 
 suma.addEventListener("click", () => {
