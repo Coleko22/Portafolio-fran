@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+}
+
+#numeros {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 292px;
+    direction: rtl;
+    height: 115px;
+}
+
+#input-numeros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#operaciones button {
+    width: 80px;
+    height: 68px;
+    cursor: pointer;
+}
+
+.filas {
+    display: flex;
+}
+
+.filas button {
+    width: 100px;
+    height: 80px;
+    cursor: pointer;
+}
+
+#cero {
+    height: 50px;
+    cursor: pointer;
+}
+
+#operaciones {
+    display: flex;
+    flex-direction: column;
+}
+
+#contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 700px;
+}
