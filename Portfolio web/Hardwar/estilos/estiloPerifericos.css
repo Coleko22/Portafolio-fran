@@ -1,0 +1,57 @@
+#perifericos {
+    width: 99vw;
+    height: 100vh;
+    background-color: black;
+    text-align: center;
+}
+
+h1 {
+    font-size: 128px;
+    color: white;
+}
+
+.productos {
+    width: 361px;
+    height: 520px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen {
+    width: 281px;
+    height: 231px;
+}
+
+p {
+    font-family: "Kdam Thmor Pro", sans-serif;
+    margin: 0px;
+    font-size: 23px;
+}
+
+.precio {
+    margin-bottom: 5%; 
+    font-size: 36px;
+}
+
+h3 {
+    background-color: black;
+    padding: 10px 20px;
+    color: red;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+h2 {
+    color: black;
+    background-color: red;
+    padding: 10px 20px;
+}
+
+#contenedor-productos {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}

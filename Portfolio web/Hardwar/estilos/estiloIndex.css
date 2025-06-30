@@ -1,0 +1,165 @@
+
+h1 {
+   font-size: 128px;
+   color: red;
+}
+
+h2 {
+    font-size: 64px;
+}
+
+#ver-productos{
+    font-size: 36px;
+    background-color: red;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+#titulo-sub-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10%;
+    gap: 10%;
+}
+
+#titulo-sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#banner {
+    background-image: url(../Imagenes/battlefield-iv-2229335.png);
+    background-size: cover;
+    background-position: left 0%;
+    width: 99vw;
+    height: 100vh;
+    display: flex;
+    justify-content: right;
+    
+}
+
+#somos {
+    background-color: black;
+    width: 99vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6%;
+}
+
+#info{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#barra-arriba {
+    position: relative;
+    width: 30%;
+    margin: 0px;
+    height: 10px;
+    background-color: white;
+    top: 10%;
+
+}
+
+#barra-abajo {
+    position: relative;
+    width: 50%;
+    margin: 0px;
+    height: 10px;
+    background-color: white;
+    margin-top: 5%;
+}
+
+#titulo-quienes {
+    color: white;
+}
+
+p{
+    font-family: "Kdam Thmor Pro", sans-serif;
+    color: white;
+    width: 800px;
+    font-size: 38px;
+}
+
+#imagen-barra {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+#ubicacion {
+    width: 99vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#donde {
+    font-size: 128px;
+}
+
+#ubi {
+    font-size: 53px;
+}
+
+#mapa {
+    width: 1000px;
+}
+
+#productos {
+    width: 99vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+#titulo-productos {
+    color: white;
+    font-size: 128px;
+}
+
+.tipo {
+    color: white;
+    font-size: 36px;
+}
+
+.contenedor-tipo {
+    width: 500px;
+    height: 300px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#perifericos {
+    background-image: url(../Imagenes/M314_1080x.jpg);
+}
+
+#componentes {
+    background-image: url(../Imagenes/photo-1597872200969-2b65d56bd16b.jpeg);
+    background-position: center 50%;
+}
+
+#conectividad {
+    background-image: url(../Imagenes/1.jpg);
+}
+
+#contenedor-imagenes {
+    display: flex;
+    justify-content: center;
+    gap: 7%;
+}
