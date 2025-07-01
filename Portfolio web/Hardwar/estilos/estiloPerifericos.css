@@ -55,3 +55,14 @@ h2 {
     justify-content: center;
     gap: 2%;
 }
+
+#hardwar {
+    background-color: white;
+    padding: 0px;
+}
+
+#titulo-redes {
+    background-color: white;
+    padding: 0px;
+    color: black;
+}
