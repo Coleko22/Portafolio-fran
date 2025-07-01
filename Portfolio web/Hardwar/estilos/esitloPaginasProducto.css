@@ -1,0 +1,102 @@
+#producto {
+    width: 99vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1, h2, span {
+    color: white;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+span {
+    font-family: "Kdam Thmor Pro", sans-serif;
+    background-color: green;
+    padding: 15px;
+    width: 34%;
+}
+
+#contenedor-precio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1, span, a {
+    font-size: 48px;
+}
+
+#icon-wsp {
+    width: 74px;
+    height: 74px;
+}
+
+#imagen {
+    width: 784px;
+    height: 643px;
+    margin-right: 5%;
+}
+
+#whatsapp {
+    font-size: 48px;
+    background-color: #25d366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 580px;
+    padding: 15px 0px;
+}
+
+#contenedor-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+    height: 643px;
+}
+
+#contenedor-descripcion {
+    margin: 7%;
+    margin-left: 10%;
+}
+
+#descripcion {
+    height: 50vh;
+}
+
+#descripcion {
+    font-size: 96px;
+    color: black;
+    display: inline;
+}
+
+p {
+    font-family: "Kdam Thmor Pro", sans-serif;
+    font-size: 32px;
+    color: black;
+    margin: 0px;
+}
+
+#contenedor-caracteristicas {
+    height: 80vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+}
+
+.carac {
+    color: white;
+}
+
+#titulo-caracteristicas {
+    font-size: 96px;
+}

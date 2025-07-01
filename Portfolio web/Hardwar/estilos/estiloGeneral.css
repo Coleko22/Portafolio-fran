@@ -15,7 +15,7 @@ a {
 }
 
 .secciones {
-    margin-left: 3%;
+    margin-left: 2%;
 }
 
 header {
@@ -32,7 +32,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 11%;
+    gap: 5%;
 }
 
 nav {
@@ -49,4 +49,46 @@ nav {
 h1, h2, h3 {
     font-family: "Kdam Thmor Pro", sans-serif;
     margin: 0px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+}
+
+#logo-footer {
+    width: 350px;
+    height: 270px;
+}
+
+#hardwar {
+    color: red;
+}
+
+#contenedor-logo{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#redes{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.iconos {
+    width: 100px;
+    height: 100px;
+}
+
+#titulo-redes {
+    font-size: 36px;
 }
