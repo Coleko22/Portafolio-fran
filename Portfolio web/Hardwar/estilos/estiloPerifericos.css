@@ -1,8 +1,12 @@
 #perifericos {
     width: 99vw;
-    height: 100vh;
+    height: 200vh;
     background-color: black;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2%;
 }
 
 h1 {
@@ -29,6 +33,7 @@ p {
     font-family: "Kdam Thmor Pro", sans-serif;
     margin: 0px;
     font-size: 23px;
+    text-align: center;
 }
 
 .precio {
@@ -50,7 +55,7 @@ h2 {
     padding: 10px 20px;
 }
 
-#contenedor-productos {
+.contenedor-productos {
     display: flex;
     justify-content: center;
     gap: 2%;
