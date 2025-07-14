@@ -149,13 +149,12 @@ p{
     background-image: url(../Imagenes/M314_1080x.jpg);
 }
 
-#componentes {
-    background-image: url(../Imagenes/photo-1597872200969-2b65d56bd16b.jpeg);
-    background-position: center 50%;
+#monitores {
+    background-image: url(../Imagenes/monitores.jpg);
 }
 
-#conectividad {
-    background-image: url(../Imagenes/1.jpg);
+#notebooks {
+    background-image: url(../Imagenes/notebooks.jpg);
 }
 
 #contenedor-imagenes {
