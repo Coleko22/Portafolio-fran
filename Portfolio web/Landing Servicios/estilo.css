@@ -1,0 +1,182 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+main {
+    margin-top: 4%;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    font-family:sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+#contacto {
+    color: #62ABFF;
+    background-color: white;
+    padding: 10px 20px;
+    margin-right: 10%;
+    border-radius: 20px;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    background-color: #62ABFF;
+    height: 10%;
+    gap: 5%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+#logo {
+    margin-left: 10%;
+}
+
+nav {
+    display: flex;
+    width: 20%;
+    gap: 5%;
+    padding-right: 20%;
+    
+}
+
+h1, h2 {
+    margin: 0px;
+    color: white;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-weight: lighter;
+    width: 70%;
+    font-size: 290%;
+}
+
+h1 {
+    font-size: 320%;
+    font-weight: bold;
+    width: 70%;
+}
+
+#banner { 
+    width: 100%;
+    height: 100%;
+    background-image: url(imagenes/BANNER-CURSO-MKT.RANDOM\ 1.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+}
+
+#titulo-info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 45%;
+    gap: 8%;
+    position: absolute;
+    transform: translateX(20%);
+}
+
+.boton {
+    background-color: white;
+    color: #003f5f;
+    padding: 20px;
+    border-radius: 20px;
+    width: 11.5%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#quienes {
+    background-color: #62ABFF;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+}
+
+#quienes-somos {
+    color:#003f5f;
+    font-size: 120px;
+}
+
+#parrafo {
+    width: 80%;
+    font-size: 36px;
+    font-family: sans-serif;
+    color: white;
+}
+
+#cursos-principal {
+    width: 100%;
+    height: 100%;
+}
+
+#titulo-cursos {
+    font-size: 100px;
+    font-family: sans-serif;
+    color: #003f5f;
+    text-align: center;
+    width: 100%;
+}
+
+#contenedor-cursos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+#cursos-1, #cursos-2{
+    display: flex;
+    width: 100%;
+
+    justify-content: center;
+    gap: 6%;
+}
+
+#cursos-2 {
+    margin-top: 5%;
+}
+
+.cursos {
+    background-color: #003f5f;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3 {
+    font-family: sans-serif;
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+}
+
+.texto-cursos {
+    font-family: sans-serif;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-weight: lighter;
+}
