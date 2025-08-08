@@ -93,7 +93,7 @@ h1 {
     transform: translateX(20%);
 }
 
-.boton {
+#boton-banner, .boton-cursos {
     background-color: white;
     color: #003f5f;
     padding: 20px;
@@ -127,15 +127,20 @@ h1 {
 
 #cursos-principal {
     width: 100%;
-    height: 100%;
+    min-height: 120vh;
+    background-color: #003f5f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #titulo-cursos {
     font-size: 100px;
     font-family: sans-serif;
-    color: #003f5f;
+    color: white;
     text-align: center;
     width: 100%;
+    margin-bottom: 3%;
 }
 
 #contenedor-cursos {
@@ -149,7 +154,6 @@ h1 {
 #cursos-1, #cursos-2{
     display: flex;
     width: 100%;
-
     justify-content: center;
     gap: 6%;
 }
@@ -159,24 +163,95 @@ h1 {
 }
 
 .cursos {
-    background-color: #003f5f;
-    width: 40%;
+    background-color: white;
+    width: 30%;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    gap: 6%;
 }
 
 h3 {
     font-family: sans-serif;
     font-size: 35px;
-    color: white;
+    color: #003f5f;
     font-weight: bold;
+    margin: 0px;
 }
 
 .texto-cursos {
     font-family: sans-serif;
-    color: white;
+    color: #003f5f;
     font-size: 30px;
     text-align: center;
     font-weight: lighter;
+    margin: 0px;
+    width: 70%;
+}
+
+.boton-cursos {
+    background-color: #003f5f;
+    color: white;
+    width: 14%;
+    text-align: center;
+}
+
+#testimonios-principal {
+    min-height: 100vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #62ABFF;
+
+}
+
+#titulo-testimonios {
+   text-align: center;
+   font-family: sans-serif;
+   font-size: 80px;
+   margin-bottom: 6%;
+}
+
+#contenedor-testimonios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonios {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 30vh;
+    border-radius: 35px;
+    gap: 5%;
+    transition: opacity 0.5s ease;
+}
+
+.texto-testi{
+    font-family: sans-serif;
+    font-size: 30px;
+    color: #62ABFF;
+    text-align: center;
+    width: 90%;
+    margin: 0px;
+    font-weight: lighter;
+}
+
+.testimonios.fade-out {
+    opacity: 0;
+}
+
+.icono-mayorque{
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
 }

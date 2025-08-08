@@ -12,8 +12,8 @@
         <nav>
             <a href="">Inicio</a>
             <a href="#quienes">Nosotros</a>
-            <a href="">Cursos</a>
-            <a href="">Testimonios</a>
+            <a href="#cursos-principal">Cursos</a>
+            <a href="#testimonios-principal">Testimonios</a>
         </nav>
         <a id="contacto" href="">Contacto</a>
     </header>
@@ -22,7 +22,7 @@
             <div id="titulo-info">
                 <h1>CONVIERTETE EN EXPERTO EN MARKETING</h1>
                 <h2>Aprende las estrategias que usan los profesionales y lleva tus proyectos al siguiente nivel</h2>
-                <a class="boton" href="">VER CURSOS</a>   
+                <a id="boton-banner" href="#cursos-principal">VER CURSOS</a>   
             </div>
         </section>
         <section id="quienes">
@@ -42,31 +42,51 @@
                     <div class="cursos">
                         <h3>Estrategias de Redes Sociales</h3>
                         <p class="texto-cursos">Aprendé a crear, gestionar y optimizar campañas en plataformas como Instagram, Facebook, TikTok y LinkedIn.</p>
-                        <a href="">VER CURSO</a>
+                        <a class="boton-cursos" href="">MAS INFO</a>
                     </div>
                     <div class="cursos">
                         <h3>Publicidad Digital (Ads)</h3>
                         <p class="texto-cursos">Dominá herramientas como Google Ads y Meta Ads para crear campañas pagas efectivas y medir resultados.</p>
-                        <a href="">VER CURSO</a>
+                        <a class="boton-cursos" href="">MAS INFO</a>
                     </div>
                 </div>
                 <div id="cursos-2">
                     <div class="cursos">
                         <h3>Email Marketing Profesional</h3>
                         <p class="texto-cursos">Diseñá campañas de correo electrónico que generen conversión y fidelicen a tu audiencia.</p>
-                        <a href="">VER CURSO</a>
+                        <a class="boton-cursos" href="">MAS INFO</a>
                     </div>
                     <div class="cursos">
                         <h3>SEO y Posicionamiento Web</h3>
                         <p class="texto-cursos">Descubrí técnicas para mejorar la visibilidad de tu sitio en buscadores y atraer tráfico orgánico de calidad.</p>
-                        <a href="">VER CURSO</a>
+                        <a class="boton-cursos" href="">MAS INFO</a>
                     </div>
                 </div>
             </div>
-        </section>    
+        </section>
+        <section id="testimonios-principal">
+            <h2 id="titulo-testimonios">TESTIMONIOS</h2>
+            <div id="contenedor-testimonios">
+                <img class="icono-mayorque" id="flecha-izquierda" src="imagenes/Mask group izquierda.png" alt="">
+                <div class="testimonios" id="testimonio">
+                    <h3>Martín R., emprendedor y alumno de Click&Learn</h3>
+                    <p class="texto-testi">Antes de conocer Click&Learn me sentía perdido entre tanta información sobre marketing digital. Gracias a sus cursos pude ordenar mis ideas y aplicar estrategias reales para mi emprendimiento. Lo mejor es que pude avanzar a mi ritmo y siempre tuve apoyo del equipo cuando lo necesité. ¡Hoy mis redes y mis ventas crecieron muchísimo!</p>
+                </div>
+                <img class="icono-mayorque" id="flecha-derecha" src="imagenes/Mask group derecha.png" alt="">
+            </div>
+        </section>
+        <section>
+            <h2>CONTACTO</h2>
+            <form action="">
+                <input type="text" name="email" id="email" placeholder="EMAIL">
+                <input type="text" name="user" id="nombre" placeholder="NOMBRE">
+                <textarea name="mensaje" id="mensaje" required placeholder="MENSAJE"></textarea>
+            </form>
+        </section> 
     </main>
     <footer>
 
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
