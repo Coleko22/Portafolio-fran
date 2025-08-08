@@ -1,0 +1,25 @@
+body {
+    background-color: #003f5f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+}
+
+h1, h2, a {
+    color: white;
+    font-family: sans-serif;
+}
+
+a{
+    padding: 20px;
+    background-color: white;
+    color: #003f5f;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.6);
+}

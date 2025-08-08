@@ -15,7 +15,7 @@
             <a href="#cursos-principal">Cursos</a>
             <a href="#testimonios-principal">Testimonios</a>
         </nav>
-        <a id="contacto" href="">Contacto</a>
+        <a id="contacto" href="#contacto-principal">Contacto</a>
     </header>
     <main>
         <section id="banner">
@@ -75,18 +75,19 @@
                 <img class="icono-mayorque" id="flecha-derecha" src="imagenes/Mask group derecha.png" alt="">
             </div>
         </section>
-        <section>
-            <h2>CONTACTO</h2>
-            <form action="">
-                <input type="text" name="email" id="email" placeholder="EMAIL">
-                <input type="text" name="user" id="nombre" placeholder="NOMBRE">
-                <textarea name="mensaje" id="mensaje" required placeholder="MENSAJE"></textarea>
+        <section id="contacto-principal">
+            <h2 id="mensaje">MANDANOS UN MENSAJE</h2>
+            <form action="saludo.html">
+                <input type="email" name="email" id="email" required placeholder="EMAIL">
+                <input type="text" name="user" id="nombre" required placeholder="NOMBRE">
+                <textarea name="mensaje" required placeholder="MENSAJE"></textarea>
+                <button id="Enviar" type="submit">ENVIAR</button>
             </form>
-        </section> 
+        </section>
+         <footer>
+            <h2>DESARROLLADO POR FRANCISCO PORTELA</h2>
+        </footer>
     </main>
-    <footer>
-
-    </footer>
     <script src="main.js"></script>
 </body>
 </html>
