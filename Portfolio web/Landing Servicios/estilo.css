@@ -10,7 +10,6 @@ body {
 }
 
 main {
-    margin-top: 4%;
     width: 100%;
     height: 100%;
 }
@@ -34,13 +33,11 @@ header {
     display: flex;
     width: 100%;
     background-color: #62ABFF;
-    height: 10%;
+    height: 80px;
     gap: 5%;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 99;
+
 }
 
 #logo {
@@ -63,24 +60,33 @@ h1, h2 {
 
 h2 {
     font-weight: lighter;
-    width: 70%;
+    width: 650px;
     font-size: 290%;
 }
 
 h1 {
     font-size: 320%;
     font-weight: bold;
-    width: 70%;
+    width: 700px;
 }
 
 #banner { 
     width: 100%;
-    height: 100%;
-    background-image: url(imagenes/BANNER-CURSO-MKT.RANDOM\ 1.png);
-    background-size: cover;
-    display: flex;
-    align-items: center;
 
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+
+}
+
+#mkt-derecha {
+    width: 100%;
+    height: 100%;
+
+}
+
+#mkt-centrado {
+    display: none;
 }
 
 #titulo-info {
@@ -98,14 +104,14 @@ h1 {
     color: #003f5f;
     padding: 20px;
     border-radius: 20px;
-    width: 11.5%;
+    width: 110px;
     font-weight: bold;
     font-size: 16px;
 }
 
 #quienes {
     background-color: #62ABFF;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,11 +133,13 @@ h1 {
 
 #cursos-principal {
     width: 100%;
-    min-height: 120vh;
+    height: auto;
     background-color: #003f5f;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 50px 0px 50px 0px;
 }
 
 #titulo-cursos {
@@ -147,31 +155,34 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
     align-items: center;
+    height: auto;
+    gap: 5%;
 }
 
 #cursos-1, #cursos-2{
     display: flex;
     width: 100%;
+    height: auto;
     justify-content: center;
     gap: 6%;
 }
 
 #cursos-2 {
-    margin-top: 5%;
+    margin-top: 3rem;
 }
 
 .cursos {
     background-color: white;
     width: 30%;
-    height: 35vh;
+    height: auto;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 30px;
-    gap: 6%;
+    gap: 2rem;
 }
 
 h3 {
@@ -180,27 +191,29 @@ h3 {
     color: #003f5f;
     font-weight: bold;
     margin: 0px;
+    text-align: center;
 }
 
 .texto-cursos {
     font-family: sans-serif;
     color: #003f5f;
-    font-size: 30px;
+    font-size: 34px;
     text-align: center;
     font-weight: lighter;
     margin: 0px;
-    width: 70%;
+    width: 80%;
 }
 
 .boton-cursos {
     background-color: #003f5f;
     color: white;
-    width: 14%;
+    width: 30%;
+    padding: 20px;
     text-align: center;
 }
 
 #testimonios-principal {
-    min-height: 100vh;
+    min-height: 700px;
     width:100%;
     display: flex;
     flex-direction: column;
@@ -214,7 +227,7 @@ h3 {
    text-align: center;
    font-family: sans-serif;
    font-size: 80px;
-   margin-bottom: 6%;
+   margin-bottom: 4%;
 }
 
 #contenedor-testimonios {
@@ -230,7 +243,8 @@ h3 {
     align-items: center;
     justify-content: center;
     background-color: white;
-    height: 30vh;
+    height: auto;
+    padding: 15px;
     border-radius: 35px;
     gap: 5%;
     transition: opacity 0.5s ease;
@@ -260,7 +274,7 @@ h3 {
 
 #contacto-principal {
     width: 100%;
-    height: 100vh;
+    height: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -316,7 +330,7 @@ button:hover {
 
 footer {
     background-color: #62ABFF;
-    height: 10%;
+    height: 100px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -325,3 +339,66 @@ footer {
 footer h2 {
     text-align: center;
 }
+
+@media (width < 1500px) {
+    #mkt-derecha {
+        display: none;
+    }
+
+    #mkt-centrado {
+        display: block;
+    }
+
+    #titulo-info {
+        transform: translateX(55%) translatey(110%);
+
+    }
+
+    #azul {
+        width: 100%;
+        height: 500px;
+        background-color: #003f5f;
+        
+    }
+}
+
+@media (width < 1214px) {
+    #cursos-1, #cursos-2 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        height: auto;
+    }
+    
+    #titulo-info {
+        transform: translateX(55%) translatey(80%);
+    }
+
+    #cursos-principal {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+     
+    }
+
+    #contenedor-cursos {
+        height: auto;
+    }
+
+}
+
+@media (width < 887px) { 
+    .cursos {
+        width: 271px;
+    }
+}
+
+@media (width < 430px) {
+    #titulo-cursos {
+        font-size: 70px;
+    }
+}
+
+
