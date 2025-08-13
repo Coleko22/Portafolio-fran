@@ -136,6 +136,7 @@ h1 {
     font-size: 520%;
     text-align: center;
     width: 60%;
+    margin-top: 35px;
 }
 
 #parrafo {
@@ -261,14 +262,14 @@ h3 {
     height: auto;
     padding: 15px;
     border-radius: 35px;
-    gap: 5%;
+    gap: 15px;
     transition: opacity 0.5s ease;
 }
 
 .texto-testi{
     font-family: sans-serif;
     font-size: 30px;
-    color: #62ABFF;
+    color: #003f5f;
     text-align: center;
     width: 90%;
     margin: 0px;
@@ -515,9 +516,19 @@ footer h2 {
     }
 }
 
+@media (width < 450px) {
+    #menu-hamburgesa {
+        width: 100%;
+    }
+}
+
 @media (width < 460px) {
     #mensaje {
         font-size: 40px;
+    }
+
+    .texto-cursos {
+        font-size: 20px;
     }
 }
 
