@@ -52,6 +52,18 @@ nav {
     
 }
 
+#abrir {
+    display: none;
+}
+
+#cerrar {
+    display: none;
+}
+
+#menu-hamburgesa {
+    display: none;
+}
+
 h1, h2 {
     margin: 0px;
     color: white;
@@ -121,7 +133,9 @@ h1 {
 
 #quienes-somos {
     color:#003f5f;
-    font-size: 120px;
+    font-size: 520%;
+    text-align: center;
+    width: 60%;
 }
 
 #parrafo {
@@ -226,7 +240,8 @@ h3 {
 #titulo-testimonios {
    text-align: center;
    font-family: sans-serif;
-   font-size: 80px;
+   font-size:350%;
+   width: 60%;
    margin-bottom: 4%;
 }
 
@@ -372,7 +387,7 @@ footer h2 {
     }
     
     #titulo-info {
-        transform: translateX(55%) translatey(80%);
+        transform: translateX(55%) translateY(80%);
     }
 
     #cursos-principal {
@@ -389,16 +404,156 @@ footer h2 {
 
 }
 
+@media (width < 1000px) {
+    
+    h2 {
+        width: 400px;
+        font-size: 200%;
+    }
+
+    h1 {
+        font-size: 240%;
+        width: 500px;
+    }   
+    nav, #contacto {
+        display: none;
+    }
+
+    header {
+        justify-content: space-evenly;
+    }
+
+    #logo {
+        margin: 0px;
+    }
+
+    #abrir {
+        display: inline-block;
+    }
+
+    #menu-hamburgesa {
+        display: flex;
+        flex-direction: column;
+        width: 450px;
+        height: auto;
+        background-color: #62ABFF;
+        right: -1000px;
+        top: 12%;
+        position: fixed;
+        transition: right 0.7s ease;
+        z-index: 99;
+    }
+
+    #menu-hamburgesa:target {
+        right: 0px;
+    }
+
+    #menu-hamburgesa:target ~ #abrir {
+        display: none;
+    }
+
+    #menu-hamburgesa:target ~ #cerrar {
+        display: inline-block;
+    }
+
+    .paginas {
+        text-decoration: none;
+        color: white;
+        font-size: 32px;
+        border-bottom: 2px solid white;
+        text-align: center;
+    }
+}
+
 @media (width < 887px) { 
     .cursos {
         width: 271px;
     }
 }
 
-@media (width < 430px) {
-    #titulo-cursos {
-        font-size: 70px;
+@media (width < 761px) { 
+    #titulo-info {
+        transform: translateX(55%) translateY(50%);
     }
 }
+
+@media (width < 689px) { 
+    h2 {
+        width: 100%;
+        font-size: 150%;
+    }
+
+    h1 {
+        font-size: 150%;
+        width: 100%;
+    } 
+}
+
+@media (width < 560px) {
+    #quienes-somos {
+        font-size: 60px;
+    }
+
+    #titulo-cursos {
+        font-size: 60px;
+    }
+
+    #titulo-testimonios {
+        font-size: 45px;
+    }
+
+    .texto-testi {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    #mensaje {
+        font-size: 80px;
+    }
+}
+
+@media (width < 460px) {
+    #mensaje {
+        font-size: 40px;
+    }
+}
+
+@media (width < 430px) {
+
+    #titulo-info {
+        transform: translateX(55%) translateY(30%);
+    }
+
+    #quienes-somos {
+        font-size: 30px;
+    }
+
+    #titulo-cursos {
+        font-size: 30px;
+    }
+
+    #titulo-testimonios {
+        font-size: 30px;
+    }
+
+    #parrafo {
+        font-size: 20px;
+    }
+
+    .icono-mayorque {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (width < 376px) {
+    #titulo-info {
+        transform: translateX(55%) translateY(15%);
+    }
+}
+
 
 
