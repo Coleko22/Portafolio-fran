@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       divAgregarNotas.style.display = "none";
       divNotas.style.display = "flex";
       botonMas.style.display = "inline-block";
-
+                                                  
     } catch (err) {
       console.error("Error al guardar la nota:", err);
       alert("Error al guardar ❌");
