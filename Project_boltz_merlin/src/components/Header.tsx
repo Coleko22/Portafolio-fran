@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Database className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-bold text-gray-900">Merlin Tech</span>
+            <span className="text-2xl font-bold text-gray-900">DEMOS Merlin</span>
           </div>
 
           {/* Desktop Menu */}
