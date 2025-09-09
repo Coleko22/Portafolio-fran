@@ -1,4 +1,3 @@
-import React from 'react';
 import { Headphones, Play, Download, Calendar } from 'lucide-react';
 
 const Podcasts = () => {

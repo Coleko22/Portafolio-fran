@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
             {menuItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => setActiveSection(item.id)}
+                onClick={() => {setActiveSection(item.id);}}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
                   activeSection === item.id
                     ? 'bg-blue-600 text-white'

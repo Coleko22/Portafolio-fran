@@ -1,4 +1,3 @@
-import React from 'react';
 import { UserCheck, FileText, Shield, CheckCircle, Clock, Zap } from 'lucide-react';
 
 const KYC = () => {

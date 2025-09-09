@@ -1,4 +1,3 @@
-import React from 'react';
 import { Database, Cpu, Cloud, BarChart3, Settings, Layers } from 'lucide-react';
 
 const SolucionesMerlin = () => {
