@@ -39,7 +39,7 @@ const VideosDemos = () => {
       title: 'Demo Retorno de la inversion ROI',
       duration: '6:15',
       views: '1.8K',
-      thumbnail: '/public/Gemini_Generated_Image_6cqwc6cqwc6cqwc6.png',
+      thumbnail: 'Gemini_Generated_Image_6cqwc6cqwc6cqwc6.png',
       link: 'https://drive.google.com/file/d/1hpjyBE7vXLWcgxawKCCSZdNrvY7BkPZw/view?usp=drive_link'
     },
     {
@@ -47,7 +47,7 @@ const VideosDemos = () => {
       title: 'Demo Proceso por lotes',
       duration: '6:15',
       views: '1.5K',
-      thumbnail: '/public/ChatGPT Image 9 sept 2025, 14_42_54.png',
+      thumbnail: 'ChatGPT Image 9 sept 2025, 14_42_54.png',
       link: 'https://drive.google.com/file/d/1zkW9NSb8V9FuE6g0TumDhr5An9LQJDwU/view?usp=drive_link'
     },
     {
@@ -76,43 +76,43 @@ const VideosDemos = () => {
     },
     {
       id: 10,
-      title: 'Demo CRM Integraciones Portlet',
+      title: 'Demo Interactivo Validar Email',
       duration: '6:15',
       views: '1.5K',
-      thumbnail: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400',
-      link: 'https://drive.google.com/file/d/1jMY64XLiaEbBBYRrMOji3uMGTKG5NXM6/view?usp=drive_link'
+      thumbnail: 'ChatGPT Image 11 sept 2025, 09_58_51.png',
+      link: 'https://drive.google.com/file/d/1qQnG88lUcz8l8hjDnrFx-Na-z7kONH3v/view?usp=drive_link'
     },
     {
       id: 11,
-      title: 'Demo CRM Integraciones Portlet',
+      title: 'Demo Interactivo Domicilios Geocodificacion',
       duration: '6:15',
       views: '1.5K',
-      thumbnail: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400',
+      thumbnail: 'ChatGPT Image 11 sept 2025, 10_35_11.png',
       link: 'https://drive.google.com/file/d/1jMY64XLiaEbBBYRrMOji3uMGTKG5NXM6/view?usp=drive_link'
     },
     {
       id: 12,
-      title: 'Demo CRM Integraciones Portlet',
+      title: 'Demo Interactivo Domicilios Direcciones',
       duration: '6:15',
       views: '1.5K',
-      thumbnail: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400',
-      link: 'https://drive.google.com/file/d/1jMY64XLiaEbBBYRrMOji3uMGTKG5NXM6/view?usp=drive_link'
+      thumbnail: 'ChatGPT Image 11 sept 2025, 10_42_14.png',
+      link: 'https://drive.google.com/file/d/1QD-fdCd_OKenyvDIL9OnNsva5g1RQZae/view?usp=drive_link'
     },
     {
       id: 13,
-      title: 'Demo CRM Integraciones Portlet',
+      title: 'Demo Validador de CURP',
       duration: '6:15',
       views: '1.5K',
-      thumbnail: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400',
-      link: 'https://drive.google.com/file/d/1jMY64XLiaEbBBYRrMOji3uMGTKG5NXM6/view?usp=drive_link'
+      thumbnail: 'ChatGPT Image 11 sept 2025, 10_47_22.png',
+      link: 'https://drive.google.com/file/d/13LgWAjKY0wdFfvXhnXjCgWD-C5eqENIA/view?usp=drive_link'
     },
     {
       id: 14,
-      title: 'Demo CRM Integraciones Portlet',
+      title: 'Demo Interactivo Normalizacion de Telefonos',
       duration: '6:15',
       views: '1.5K',
-      thumbnail: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400',
-      link: 'https://drive.google.com/file/d/1jMY64XLiaEbBBYRrMOji3uMGTKG5NXM6/view?usp=drive_link'
+      thumbnail: 'ChatGPT Image 11 sept 2025, 10_51_02.png',
+      link: 'https://drive.google.com/file/d/1oX3kllLaoMtz415K77MwDnNDL7SRKoFe/view?usp=drive_link'
     }
   ];
 
@@ -131,10 +131,11 @@ const VideosDemos = () => {
           {videos.map((video) => (
             <div key={video.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="relative">
+                 
                 <img 
                   src={video.thumbnail} 
                   alt={video.title}
-                  className="w-full h-48 object-cover"
+                  className={`w-full h-48 object-cover ${video.id === 10 ? "object-[50%_83%]" : video.id === 11 || video.id === 12 || video.id === 14 ? "object-[50%_20%]" : ""}`}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <a target="_blank" href={video.link}><button className="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full transform hover:scale-110 transition-transform duration-300">
