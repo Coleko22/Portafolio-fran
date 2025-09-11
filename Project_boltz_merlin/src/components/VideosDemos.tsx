@@ -138,7 +138,7 @@ const VideosDemos = () => {
                   className={`w-full h-48 object-cover ${video.id === 10 ? "object-[50%_83%]" : video.id === 11 || video.id === 12 || video.id === 14 ? "object-[50%_20%]" : ""}`}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                  <a target="_blank" href={video.link}><button className="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full transform hover:scale-110 transition-transform duration-300">
+                  <a target="_blank" href={video.link} rel="noopener noreferrer"><button className="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full transform hover:scale-110 transition-transform duration-300">
                     <Play className="h-8 w-8 ml-1" />
                   </button>
                   </a>
@@ -155,7 +155,7 @@ const VideosDemos = () => {
                     <Eye className="h-4 w-4 mr-1" />
                     {video.views} visualizaciones
                   </div>
-                  <a target="_blank" href={video.link}><button className="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors duration-300 flex items-center">
+                  <a target="_blank" href={video.link} rel="noopener noreferrer"><button className="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors duration-300 flex items-center">
                     <Video className="h-4 w-4 mr-2" />
                     Ver Demo
                   </button>

@@ -62,9 +62,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
                 key={item.id}
                 onClick={() => {
                   setActiveSection(item.id);
-                if(item.id == "videos") {window.open("https://drive.google.com/drive/folders/1FQyo8pFAr4j7IU9LbKvTcCls_Akc5vFk", "_blank");} else if (item.id == "podcasts") {
-window.open("https://drive.google.com/drive/folders/14IGzCZafCSTtI8HPvVyKS2noIYrtL_zg", "_blank");} else if (item.id == "kyc") {               
-window.open("https://drive.google.com/drive/folders/1sJLuYnIaUPD8-UXizWGDjnX1DDr0Xcoz", "_blank");} else if (item.id == "biometria"){     window.open("https://drive.google.com/drive/folders/1eIJWH28e_bGpyJfgeucceikSKfDvtMDg", "_blank");};
                   setIsMenuOpen(false);
                 }}
                 className={`w-full flex items-center space-x-2 px-4 py-3 rounded-lg transition-all duration-300 ${
