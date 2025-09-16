@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsData = {
         'api-notas': {
             title: 'API Notas',
-            description: 'Desarrollé una API de gestión de notas con Spring Boot (Java) y Maven, utilizando PostgreSQL como base de datos para un almacenamiento seguro y escalable. El backend está desplegado en Render, mientras que el frontend en Vercel ofrece una interfaz dinámica construida con JavaScript, HTML y CSS. Este proyecto demuestra mi capacidad para diseñar, implementar y desplegar aplicaciones completas, integrando un backend robusto con una experiencia de usuario ágil y moderna.',
+            description: 'Desarrollé una API de gestión de notas con Spring Boot (Java) y Maven, utilizando PostgreSQL como base de datos para un almacenamiento seguro y escalable. El backend está desplegado en Render, mientras que el frontend en Vercel ofrece una interfaz dinámica construida con React, Typescript y Tailwind CSS. Este proyecto demuestra mi capacidad para diseñar, implementar y desplegar aplicaciones completas, integrando un backend robusto con una experiencia de usuario ágil y moderna.',
             link: 'https://notas-livid.vercel.app/'
         },
         'demo-merlin': {
