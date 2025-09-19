@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     //hola
     try {
-      const res = await fetch("https://backend-api-notas.onrender.com/api/notes", {
+      const res = await fetch("https://backend-api-notas-1.onrender.com/api/notes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -73,7 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
         botonConfirmarEdicion.addEventListener("click", async () => {
           try {
             const id = notaDiv.dataset.id;
-            const res = await fetch(`https://backend-api-notas.onrender.com/api/notes/${id}`, {
+              
+            // http://localhost:8080
+            const res = await fetch(`https://backend-api-notas-1.onrender.com/api/notes/${id}`, {
               method: "PUT",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -99,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
       botonBorrar.addEventListener("click", async () => {
         try {
           const id = notaDiv.dataset.id;
-          const res = await fetch(`https://backend-api-notas.onrender.com/api/notes/${id}`, {
+          const res = await fetch(`https://backend-api-notas-1.onrender.com/api/notes/${id}`, {
             method: "DELETE"
           });
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
