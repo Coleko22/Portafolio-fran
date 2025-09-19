@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: inputTitle.value.trim(),
       content: inputContent.value.trim()
     };
-
+    //hola
     try {
       const res = await fetch("https://backend-api-notas.onrender.com/api/notes", {
         method: "POST",
