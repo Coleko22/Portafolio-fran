@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsData = {
         'api-notas': {
             title: 'API Notas',
-            description: 'Desarrollé una API de gestión de notas con Spring Boot (Java) y Maven, utilizando PostgreSQL como base de datos para un almacenamiento seguro y escalable. El backend está desplegado en Render, mientras que el frontend en Vercel ofrece una interfaz dinámica construida con React, Typescript y Tailwind CSS. Este proyecto demuestra mi capacidad para diseñar, implementar y desplegar aplicaciones completas, integrando un backend robusto con una experiencia de usuario ágil y moderna. La primera request puede tardar aproximadamente 2 minutos debido a utilizar un servidor en la nube gratuito como Render.',
+            description: 'Proyecto realizado con IA. Desarrollé una API de gestión de notas con Spring Boot (Java) y Maven, utilizando PostgreSQL como base de datos para un almacenamiento seguro y escalable. El backend está desplegado en Render, mientras que el frontend en Vercel ofrece una interfaz dinámica construida con React, Typescript y Tailwind CSS. Este proyecto demuestra mi capacidad para diseñar, implementar y desplegar aplicaciones completas, integrando un backend robusto con una experiencia de usuario ágil y moderna. La primera request puede tardar aproximadamente 2 minutos debido a utilizar un servidor en la nube gratuito como Render.',
             link: 'https://notas-livid.vercel.app/'
         },
         'landing-servicios': {
@@ -14,9 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
             link: 'https://portafolio-fran-landing-servicios.vercel.app/' // Cambia '#' por el enlace real
         },
         'e-commerce': {
-            title: 'Web tipo e-commerce',
+            title: 'Web tipo E-commerce',
             description: 'Diseñé y desarrollé una pagina tipo tienda online completamente desde cero, utilizando HTML y CSS puro para lograr un sitio ligero y rápido. Cada sección refleja diseño limpio, jerarquía visual clara y una experiencia de usuario intuitiva, sin depender de frameworks. Este proyecto demuestra mi capacidad para construir interfaces profesionales y atractivas solo con código base. No es responsive, abrir en pc con monitor de 1920x1080',
             link: 'https://portafolio-fran-hardwar.vercel.app/' // Cambia '#' por el enlace real
+        },
+        'sitio-web-star-wars': {
+            title: 'Web de Star Wars',
+            description: 'Sitio web informativo sobre Star Wars, desarrollado desde cero con HTML y CSS, totalmente responsive para una experiencia óptima en cualquier dispositivo. Combina un diseño atractivo con una estructura clara para destacar datos, personajes y el universo de la saga galáctica' ,
+            link: 'https://parcial-davinci.vercel.app/'
         }
     };
 
