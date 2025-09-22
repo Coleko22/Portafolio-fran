@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Desarrollé una API de gestión de notas con Spring Boot (Java) y Maven, utilizando PostgreSQL como base de datos para un almacenamiento seguro y escalable. El backend está desplegado en Render, mientras que el frontend en Vercel ofrece una interfaz dinámica construida con React, Typescript y Tailwind CSS. Este proyecto demuestra mi capacidad para diseñar, implementar y desplegar aplicaciones completas, integrando un backend robusto con una experiencia de usuario ágil y moderna. La primera request puede tardar aproximadamente 2 minutos debido a utilizar un servidor en la nube gratuito como Render.',
             link: 'https://notas-livid.vercel.app/'
         },
-        'demo-merlin': {
-            title: 'Web DEMO Merlin',
-            description: 'Desarrollé una página web moderna con React y TypeScript, utilizando HTML semántico y Tailwind CSS para un diseño limpio y adaptable. Con la colaboración de la IA Boltz, construí una experiencia fluida que permite a los visitantes explorar demos en vivo del software de Merlin, mostrando sus principales funcionalidades de forma clara y atractiva. Este proyecto combina interfaz ágil, código escalable y estética profesional, ideal para presentar productos tecnológicos y generar interés en potenciales clientes.',
-            link: 'https://project-demos-merlin.vercel.app/' // Cambia '#' por el enlace real
+        'landing-servicios': {
+            title: 'Landing Page Responsive',
+            description: 'Desarrollé una landing page totalmente responsive, creada desde cero con HTML, CSS y un toque de JavaScript para lograr una experiencia interactiva y fluida. Su diseño moderno y adaptable garantiza una navegación impecable en cualquier dispositivo, demostrando mi capacidad para combinar estructura, estilo y funcionalidad en un proyecto web profesional.',
+            link: 'https://portafolio-fran-landing-servicios.vercel.app/' // Cambia '#' por el enlace real
         },
         'e-commerce': {
             title: 'Web tipo e-commerce',
