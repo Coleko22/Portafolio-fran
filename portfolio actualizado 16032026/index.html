@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Francisco Portela — Desarrollador Fullstack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0f;
+      --bg2:       #101018;
+      --surface:   #15151f;
+      --border:    #22223a;
+      --accent:    #5b6ef5;
+      --accent2:   #a78bfa;
+      --text:      #e8e8f0;
+      --muted:     #7070a0;
+      --tag-bg:    #1a1a2e;
+      --tag-text:  #9999dd;
+      --green:     #4ade80;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── SCROLLBAR ──────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* ─── NAV ────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 6vw;
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s, backdrop-filter .3s, background .3s;
+    }
+    nav.scrolled {
+      border-color: var(--border);
+      backdrop-filter: blur(16px);
+      background: rgba(10,10,15,.75);
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.1rem;
+      color: var(--text); text-decoration: none;
+      letter-spacing: -.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: .8rem; color: var(--muted);
+      text-decoration: none; letter-spacing: .05em;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ─── HERO ───────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 10rem 6vw 6rem;
+      position: relative; overflow: hidden;
+    }
+
+    /* grid background */
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: .35;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 30%, transparent 100%);
+    }
+
+    /* glow blob */
+    #hero::after {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,110,245,.18) 0%, transparent 70%);
+      top: -100px; left: -100px;
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .78rem; color: var(--accent);
+      letter-spacing: .15em; text-transform: uppercase;
+      margin-bottom: 1.4rem;
+      opacity: 0; animation: fadeUp .6s .1s forwards;
+    }
+    .hero-label::before { content: '// '; opacity: .5; }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 800; line-height: 1.0;
+      letter-spacing: -.04em;
+      opacity: 0; animation: fadeUp .7s .2s forwards;
+    }
+    h1 .line2 { color: var(--accent); display: block; }
+
+    .hero-sub {
+      margin-top: 1.8rem;
+      max-width: 520px;
+      color: var(--muted); font-size: 1.05rem; font-weight: 300;
+      opacity: 0; animation: fadeUp .7s .35s forwards;
+    }
+
+    .hero-cta {
+      margin-top: 2.8rem; display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp .7s .5s forwards;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .75rem 1.6rem;
+      border-radius: 6px;
+      font-family: 'DM Mono', monospace; font-size: .82rem;
+      text-decoration: none; font-weight: 400;
+      transition: transform .2s, box-shadow .2s, background .2s;
+      cursor: pointer; border: none;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--accent); color: #fff;
+      box-shadow: 0 0 0 0 rgba(91,110,245,0);
+    }
+    .btn-primary:hover { box-shadow: 0 8px 24px rgba(91,110,245,.4); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-stack {
+      margin-top: 4rem;
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp .7s .65s forwards;
+    }
+    .hero-stack-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .72rem; color: var(--muted); letter-spacing: .1em;
+    }
+    .stack-tags { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .tag {
+      padding: .3rem .75rem;
+      border-radius: 4px;
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+      font-size: .72rem; color: var(--tag-text);
+      transition: border-color .2s, color .2s;
+    }
+    .tag:hover { border-color: var(--accent2); color: var(--accent2); }
+
+    /* ─── STATUS DOT ─────────────────────── */
+    .status-badge {
+      margin-top: 3rem;
+      display: inline-flex; align-items: center; gap: .6rem;
+      padding: .4rem 1rem;
+      border: 1px solid rgba(74,222,128,.2);
+      border-radius: 100px;
+      background: rgba(74,222,128,.05);
+      font-family: 'DM Mono', monospace;
+      font-size: .72rem; color: var(--green);
+      opacity: 0; animation: fadeUp .7s .8s forwards;
+    }
+    .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+      animation: pulse 2s infinite;
+    }
+
+    /* ─── SECTION SHARED ─────────────────── */
+    section { padding: 7rem 6vw; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .75rem; color: var(--accent);
+      letter-spacing: .15em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .section-label::before { content: '// '; opacity: .5; }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; letter-spacing: -.03em;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ─── PROJECTS ───────────────────────── */
+    #proyectos { background: var(--bg2); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex; flex-direction: column;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(91,110,245,.06), transparent 60%);
+      opacity: 0; transition: opacity .3s;
+    }
+    .card:hover { border-color: rgba(91,110,245,.5); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.4); }
+    .card:hover::before { opacity: 1; }
+
+    .card-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+    .card-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .card-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem; color: var(--green);
+      border: 1px solid rgba(74,222,128,.3);
+      border-radius: 100px; padding: .2rem .6rem;
+      background: rgba(74,222,128,.05);
+    }
+    .card-badge.wip {
+      color: #f59e0b;
+      border-color: rgba(245,158,11,.3);
+      background: rgba(245,158,11,.05);
+    }
+
+    .card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem; font-weight: 700;
+      letter-spacing: -.02em; margin-bottom: .6rem;
+    }
+    .card p {
+      color: var(--muted); font-size: .9rem; line-height: 1.65;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex; flex-wrap: wrap; gap: .4rem;
+      margin: 1.4rem 0 1.6rem;
+    }
+
+    .card-links { display: flex; gap: .75rem; }
+    .card-link {
+      font-family: 'DM Mono', monospace;
+      font-size: .75rem; color: var(--accent);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: .3rem;
+      transition: color .2s;
+    }
+    .card-link:hover { color: var(--accent2); }
+    .card-link svg { width: 14px; height: 14px; }
+    .card-link.disabled { color: var(--muted); pointer-events: none; }
+
+    /* featured card */
+    .card.featured {
+      grid-column: 1 / -1;
+      flex-direction: row; gap: 2.5rem;
+      align-items: flex-start;
+    }
+    .card.featured .card-body { flex: 1; }
+    .card.featured .card-visual {
+      flex: 0 0 260px;
+      height: 180px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .mock-browser {
+      width: 90%; height: 85%;
+      background: #0a0a12;
+      border-radius: 6px; border: 1px solid #2a2a4a;
+      overflow: hidden;
+    }
+    .mock-bar {
+      background: #1a1a2a;
+      height: 22px;
+      display: flex; align-items: center;
+      padding: 0 8px; gap: 5px;
+    }
+    .mock-dot { width: 7px; height: 7px; border-radius: 50%; }
+    .mock-content {
+      padding: 8px;
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .mock-line {
+      height: 6px; border-radius: 3px;
+      background: rgba(91,110,245,.3);
+    }
+    .mock-line.short { width: 55%; }
+    .mock-line.xshort { width: 35%; background: rgba(167,139,250,.2); }
+    .mock-card-row { display: flex; gap: 5px; margin-top: 4px; }
+    .mock-card-mini {
+      flex: 1; height: 40px; border-radius: 4px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+
+    /* ─── ABOUT / SKILLS ─────────────────── */
+    #sobre-mi { background: var(--bg); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
+    }
+    .about-text p {
+      color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem;
+      font-weight: 300;
+    }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+
+    .skills-block h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: .85rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: .9rem; margin-top: 1.8rem;
+    }
+    .skills-block h4:first-child { margin-top: 0; }
+    .skills-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+    /* ─── CONTACT ────────────────────────── */
+    #contacto {
+      background: var(--bg2);
+      text-align: center;
+    }
+    .contact-inner { max-width: 540px; margin: 0 auto; }
+    .contact-inner p {
+      color: var(--muted); margin-bottom: 2.5rem;
+      font-size: 1.05rem; font-weight: 300;
+    }
+    .contact-links {
+      display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+    }
+
+    /* ─── FOOTER ─────────────────────────── */
+    footer {
+      padding: 2rem 6vw;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: .72rem; color: var(--muted);
+    }
+
+    /* ─── ANIMATIONS ─────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: .4; }
+    }
+
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .65s, transform .65s;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* stagger children */
+    .stagger > * { opacity: 0; transform: translateY(24px); transition: opacity .55s, transform .55s; }
+    .stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:.0s; }
+    .stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:.12s; }
+    .stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:.24s; }
+    .stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:.36s; }
+
+    /* ─── RESPONSIVE ─────────────────────── */
+    @media (max-width: 768px) {
+      .card.featured { flex-direction: column; }
+      .card.featured .card-visual { flex: none; width: 100%; height: 140px; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a class="nav-logo" href="#hero">fran<span>.</span>dev</a>
+    <ul class="nav-links">
+      <li><a href="#proyectos">proyectos</a></li>
+      <li><a href="#sobre-mi">sobre mí</a></li>
+      <li><a href="#contacto">contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <p class="hero-label">Desarrollador Fullstack Junior</p>
+    <h1>
+      Francisco
+      <span class="line2">Portela</span>
+    </h1>
+    <p class="hero-sub">
+      Construyo aplicaciones web de extremo a extremo — desde la base de datos hasta la interfaz.
+      Stack principal: <strong style="color:var(--text)">React · Java / Spring Boot · MySQL</strong>.
+    </p>
+    <div class="hero-cta">
+      <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+      <a href="#contacto" class="btn btn-ghost">Contacto</a>
+      <a href="https://github.com/Coleko22" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+    </div>
+    <div class="hero-stack">
+      <span class="hero-stack-label">stack:</span>
+      <div class="stack-tags">
+        <span class="tag">React</span>
+        <span class="tag">Java</span>
+        <span class="tag">Spring Boot</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">PHP</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Railway</span>
+        <span class="tag">Cloudflare</span>
+      </div>
+    </div>
+    <div class="status-badge">
+      <span class="dot"></span>
+      Disponible para trabajar
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos">
+    <p class="section-label reveal">proyectos</p>
+    <h2 class="reveal">Lo que construí</h2>
+
+    <div class="projects-grid stagger">
+
+      <!-- FEATURED: TuEventoWeb -->
+      <div class="card featured">
+        <div class="card-body">
+          <div class="card-header">
+            <div class="card-icon">🎟</div>
+            <span class="card-badge">Live</span>
+          </div>
+          <h3>TuEventoWeb</h3>
+          <p>
+            Plataforma fullstack de venta de entradas para eventos musicales. Incluye listado de eventos,
+            selección de tickets y flujo de compra completo. Backend REST con Spring Boot deployado en Railway;
+            frontend en React deployado en Cloudflare Workers.
+          </p>
+          <div class="card-tags">
+            <span class="tag">React</span>
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Railway</span>
+            <span class="tag">Cloudflare</span>
+          </div>
+          <div class="card-links">
+            <a href="https://tueventoweb.colofran23.workers.dev/#/" target="_blank" class="card-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Ver demo
+            </a>
+          </div>
+        </div>
+        <div class="card-visual">
+          <div class="mock-browser">
+            <div class="mock-bar">
+              <div class="mock-dot" style="background:#ff5f57"></div>
+              <div class="mock-dot" style="background:#febc2e"></div>
+              <div class="mock-dot" style="background:#28c840"></div>
+            </div>
+            <div class="mock-content">
+              <div class="mock-line" style="width:70%"></div>
+              <div class="mock-line short"></div>
+              <div class="mock-line xshort"></div>
+              <div class="mock-card-row">
+                <div class="mock-card-mini"></div>
+                <div class="mock-card-mini"></div>
+                <div class="mock-card-mini"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto facultad -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(135deg,#7c3aed,#a78bfa)">🎵</div>
+          <span class="card-badge wip">Facultad</span>
+        </div>
+        <h3>Web de Música</h3>
+        <p>
+          Proyecto final de materia. Plataforma web de música con sistema de usuarios,
+          base de datos relacional y lógica de servidor en PHP. Diseño responsivo con HTML y CSS.
+        </p>
+        <div class="card-tags">
+          <span class="tag">PHP</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/Coleko22" target="_blank" class="card-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Demo padre -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(135deg,#0891b2,#67e8f9)">🌐</div>
+          <span class="card-badge">Demo</span>
+        </div>
+        <h3>Landing Page Empresarial</h3>
+        <p>
+          Sitio web de presentación para empresa, construido como demo funcional. Diseño responsivo,
+          secciones de servicios y contacto. Generado con asistencia de IA y adaptado a medida.
+        </p>
+        <div class="card-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="card-links">
+          <span class="card-link disabled">Sin repositorio público</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi">
+    <p class="section-label reveal">sobre mí</p>
+    <h2 class="reveal">Un poco de contexto</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          Soy estudiante de <strong>Análisis de Sistemas en la Escuela Da Vinci</strong> (CABA)
+          y estoy buscando mi primera oportunidad formal en IT.
+        </p>
+        <p>
+          Mi camino arrancó desde el lado comercial — trabajé vendiendo productos tecnológicos y
+          servicios digitales, lo que me dio una perspectiva orientada al usuario y al negocio que
+          no muchos desarrolladores tienen desde el inicio.
+        </p>
+        <p>
+          Hoy combino eso con proyectos propios donde <strong>diseño, codifico y hago deploy</strong>
+          de punta a punta. Me muevo bien entre el frontend y el backend, y me gusta entender
+          cómo cada pieza del sistema encaja con las demás.
+        </p>
+        <div style="margin-top:2rem">
+          <a href="mailto:francisconportela01@gmail.com" class="btn btn-primary">Escribime</a>
+        </div>
+      </div>
+      <div class="skills-block reveal">
+        <h4>Frontend</h4>
+        <div class="skills-row">
+          <span class="tag">React</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+        </div>
+        <h4>Backend</h4>
+        <div class="skills-row">
+          <span class="tag">Java</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">PHP</span>
+          <span class="tag">REST APIs</span>
+        </div>
+        <h4>Base de datos</h4>
+        <div class="skills-row">
+          <span class="tag">MySQL</span>
+        </div>
+        <h4>Deploy & Herramientas</h4>
+        <div class="skills-row">
+          <span class="tag">Railway</span>
+          <span class="tag">Cloudflare Workers</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+        </div>
+        <h4>Metodologías</h4>
+        <div class="skills-row">
+          <span class="tag">Scrum</span>
+          <span class="tag">Agile</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="contact-inner">
+      <p class="section-label reveal" style="text-align:center">contacto</p>
+      <h2 class="reveal">¿Hablamos?</h2>
+      <p class="reveal">
+        Estoy buscando mi primer rol en IT. Si tenés un proyecto o una posición donde pueda sumar,
+        mandame un mensaje.
+      </p>
+      <div class="contact-links reveal">
+        <a href="mailto:francisconportela01@gmail.com" class="btn btn-primary">
+          ✉ francisconportela01@gmail.com
+        </a>
+        <a href="https://github.com/Coleko22" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+        <a href="tel:+541123182615" class="btn btn-ghost">📞 Llamar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Francisco Nahuel Portela</p>
+    <p>Parque Avellaneda, CABA · Argentina</p>
+  </footer>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

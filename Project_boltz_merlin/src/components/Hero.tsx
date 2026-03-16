@@ -1,4 +1,6 @@
 import { ArrowRight, Shield, Database, Zap } from 'lucide-react';
+import VideosDemos from './VideosDemos';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -23,9 +25,9 @@ const Hero = () => {
                 <span>Conocer Soluciones</span>
                 <ArrowRight className="h-5 w-5" />
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                Ver Demo
-              </button>
+              <Link to="/VideosDemos" className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                Ver Demos
+              </Link>
             </div>
           </div>
           <div className="relative">

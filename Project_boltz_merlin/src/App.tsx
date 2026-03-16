@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import VideosDemos from './components/VideosDemos';
@@ -46,7 +47,11 @@ function App() {
         {renderSection()}
       </main>
       <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/VideosDemos" element={<VideosDemos />} />
+      </Routes>
+    </div>  
   );
 }
 
