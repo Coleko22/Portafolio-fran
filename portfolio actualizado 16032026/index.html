@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Francisco Portela — Desarrollador Fullstack</title>
+  <title>Francisco Portela — Analista de Sistemas Junior | Desarrollador Fullstack</title>
+  <meta name="description" content="Francisco Portela, Analista de Sistemas Junior y desarrollador fullstack (Java/Spring Boot, React, MySQL). Creador de Nexarte, una ticketera en producción con pagos por Mercado Pago." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -546,6 +547,113 @@
       border: 1px solid rgba(255, 255, 255, .07);
     }
 
+    /* Nexarte screenshots */
+    .card.featured {
+      flex-wrap: wrap;
+    }
+
+    .card.featured .card-body {
+      flex: 1 1 100%;
+    }
+
+    .shots {
+      flex: 1 0 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .shot {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .shot button {
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg);
+      cursor: zoom-in;
+      line-height: 0;
+      transition: border-color .2s;
+    }
+
+    .shot button:hover,
+    .shot button:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .shot img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .shot figcaption {
+      font-family: 'DM Mono', monospace;
+      font-size: .7rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 4vw;
+      background: rgba(5, 5, 10, .92);
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    /* Experiencia */
+    .exp-list {
+      margin: 2rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .exp-list li {
+      border-left: 2px solid var(--border);
+      padding-left: 1rem;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .exp-list strong {
+      display: block;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .exp-list span {
+      font-family: 'DM Mono', monospace;
+      font-size: .72rem;
+    }
+
     /* ─── ABOUT / SKILLS ─────────────────── */
     #sobre-mi {
       background: var(--bg);
@@ -717,6 +825,10 @@
         gap: 2.5rem;
       }
 
+      .shots {
+        grid-template-columns: 1fr;
+      }
+
       .nav-links {
         display: none;
       }
@@ -738,19 +850,20 @@
 
   <!-- HERO -->
   <section id="hero">
-    <p class="hero-label">Desarrollador Fullstack Junior</p>
+    <p class="hero-label">Analista de Sistemas Junior | Desarrollador Fullstack</p>
     <h1>
       Francisco
       <span class="line2">Portela</span>
     </h1>
     <p class="hero-sub">
-      Construyo aplicaciones web de extremo a extremo — desde la base de datos, pasando por el backend, hasta el frontend, integrando API's necesarias para el negocio.
+      Construyo aplicaciones web de extremo a extremo — desde la base de datos, pasando por el backend, hasta el frontend, integrando las APIs que necesita el negocio.
       Stack principal: <strong style="color:var(--text)">Javascript / React · Java / Spring Boot · MySQL</strong>.
     </p>
     <div class="hero-cta">
       <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+      <a href="CV-Francisco-Portela.pdf" download class="btn btn-ghost">Descargar CV</a>
       <a href="#contacto" class="btn btn-ghost">Contacto</a>
-      <a href="https://github.com/Coleko22" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+      <a href="https://github.com/Coleko22" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
     </div>
     <div class="hero-stack">
       <span class="hero-stack-label">tecnologias:</span>
@@ -761,8 +874,8 @@
         <span class="tag">Spring Boot</span>
         <span class="tag">MySQL</span>
         <span class="tag">PHP</span>
-        <span class="tag">Pyton</span>
-        <span class="tag">Github</span>
+        <span class="tag">Python</span>
+        <span class="tag">GitHub</span>
         <span class="tag">Railway</span>
         <span class="tag">Cloudflare</span>
       </div>
@@ -789,9 +902,9 @@
           </div>
           <h3>Nexarte</h3>
           <p>
-            Ticketera para eventos musicales. Incluye la gestion de la venta de entradas, con QR unico al mail por entrada y cobro instantaneo de la venta con split de pagos de mercado pago. Flujo completo para el usuario para comprar sus entradas.
-            Tambien tiene paneles de admin y artista, para crear y editar los eventos, ver metricas, ver compradores y validar entradas. Backend con Spring Boot deployado en Railway;
-            frontend en React deployado en Cloudflare Workers; Base de datos relacional MySQL deployada en Railway; API integrada de mercado pago.
+            Ticketera para eventos musicales, en producción. Venta de entradas con QR único enviado por mail y cobro instantáneo con split de pagos de Mercado Pago.
+            Incluye paneles de admin y artista para crear y editar eventos, ver métricas y compradores, y validar entradas.
+            Backend en Spring Boot y base MySQL en Railway; frontend en React en Cloudflare Workers.
           </p>
           <div class="card-tags">
             <span class="tag">JavaScript</span>
@@ -799,9 +912,12 @@
             <span class="tag">Java</span>
             <span class="tag">Spring Boot</span>
             <span class="tag">MySQL</span>
+            <span class="tag">Mercado Pago API</span>
+            <span class="tag">Railway</span>
+            <span class="tag">Cloudflare Workers</span>
           </div>
           <div class="card-links">
-            <a href="https://nexarte.net" target="_blank" class="card-link">
+            <a href="https://nexarte.net" target="_blank" rel="noopener" class="card-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                 <polyline points="15 3 21 3 21 9" />
@@ -811,24 +927,25 @@
             </a>
           </div>
         </div>
-        <div class="card-visual">
-          <div class="mock-browser">
-            <div class="mock-bar">
-              <div class="mock-dot" style="background:#ff5f57"></div>
-              <div class="mock-dot" style="background:#febc2e"></div>
-              <div class="mock-dot" style="background:#28c840"></div>
-            </div>
-            <div class="mock-content">
-              <div class="mock-line" style="width:70%"></div>
-              <div class="mock-line short"></div>
-              <div class="mock-line xshort"></div>
-              <div class="mock-card-row">
-                <div class="mock-card-mini"></div>
-                <div class="mock-card-mini"></div>
-                <div class="mock-card-mini"></div>
-              </div>
-            </div>
-          </div>
+        <div class="shots">
+          <figure class="shot">
+            <button type="button" data-full="img/nexarte-home.webp" aria-label="Ampliar captura: home de Nexarte">
+              <img src="img/nexarte-home.webp" alt="Home de Nexarte con el buscador, los géneros y la lista de próximos eventos" loading="lazy" />
+            </button>
+            <figcaption>Home pública: próximos eventos, géneros y buscador.</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" data-full="img/nexarte-metricas.webp" aria-label="Ampliar captura: métricas del panel de artista">
+              <img src="img/nexarte-metricas.webp" alt="Panel de artista de Nexarte con métricas de ventas, QR leídos, ventas por canal y ritmo de venta" loading="lazy" />
+            </button>
+            <figcaption>Panel de artista: ventas, QR leídos, canales y ritmo de venta.</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" data-full="img/nexarte-admin.webp" aria-label="Ampliar captura: edición de evento en el panel admin">
+              <img src="img/nexarte-admin.webp" alt="Panel admin de Nexarte editando un evento y sus tipos de entrada" loading="lazy" />
+            </button>
+            <figcaption>Panel admin: edición de eventos y tipos de entrada con stock.</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -838,7 +955,7 @@
           <div class="card-icon" style="background: linear-gradient(135deg,#7c3aed,#a78bfa)">⚔️</div>
           <span class="card-badge wip">Facultad</span>
         </div>
-        <h3>Sistema de batalla Pokemon</h3>
+        <h3>Sistema de batalla Pokémon</h3>
         <p>
           Proyecto final de Programación Avanzada. 
           App de escritorio en Java 21 con Swing: los usuarios se registran, arman su equipo, combaten contra la CPU y capturan Pokémon salvajes. 
@@ -870,7 +987,7 @@
         </div>
         <h3>Galleta de la Fortuna</h3>
         <p>
-          Proyecto final de Produccion Web. App en Laravel con registro, login y roles de usuario. Cada usuario abre galletas de la fortuna con mensajes aleatorios y consulta su historial. 
+          Proyecto final de Producción Web. App en Laravel con registro, login y roles de usuario. Cada usuario abre galletas de la fortuna con mensajes aleatorios y consulta su historial. 
           Tiene un panel de administración con CRUD de mensajes, estadísticas y un log de auditoría, y muestra el clima en vivo consumiendo la API de Open-Meteo.
         </p>
         <div class="card-tags">
@@ -902,8 +1019,8 @@
     <div class="about-grid">
       <div class="about-text reveal">
         <p>
-          Soy estudiante de <strong>Análisis de Sistemas en la Escuela Da Vinci</strong> (CABA)
-          y estoy buscando mi primera oportunidad formal en IT.
+          Soy estudiante de <strong>Analista de Sistemas en la Escuela Da Vinci</strong> (CABA),
+          con 15 de 30 materias aprobadas, y estoy buscando mi primera oportunidad formal en IT.
         </p>
         <p>
           Mi camino arrancó desde el lado comercial — trabajé vendiendo productos tecnológicos y
@@ -915,6 +1032,18 @@
           de punta a punta. Me muevo bien entre el frontend y el backend, y me gusta entender
           cómo cada pieza del sistema encaja con las demás.
         </p>
+        <ul class="exp-list">
+          <li>
+            <strong>EGC Informática</strong>
+            <span>2023 – 2024</span><br />
+            Gestión de stock, atención al cliente, armado y limpieza de PCs, y venta en tienda física.
+          </li>
+          <li>
+            <strong>Digital Strategy</strong>
+            <span>2022</span><br />
+            Cartera propia de clientes (prospección y seguimiento), venta online y paquetes de marketing personalizados.
+          </li>
+        </ul>
         <div style="margin-top:2rem">
           <a href="https://mail.google.com/mail/?view=cm&to=francisconportela01@gmail.com" class="btn btn-primary">Escribime</a>
         </div>
@@ -926,14 +1055,17 @@
           <span class="tag">JavaScript</span>
           <span class="tag">HTML5</span>
           <span class="tag">CSS3</span>
+          <span class="tag">Tailwind</span>
         </div>
         <h4>Backend</h4>
         <div class="skills-row">
           <span class="tag">Java</span>
           <span class="tag">Spring Boot</span>
           <span class="tag">PHP</span>
+          <span class="tag">Laravel</span>
           <span class="tag">Python</span>
           <span class="tag">REST APIs</span>
+          <span class="tag">Mercado Pago API</span>
         </div>
         <h4>Base de datos</h4>
         <div class="skills-row">
@@ -946,10 +1078,16 @@
           <span class="tag">Vercel</span>
           <span class="tag">Git</span>
           <span class="tag">GitHub</span>
+          <span class="tag">Maven</span>
+          <span class="tag">JUnit 5</span>
         </div>
         <h4>Metodologías</h4>
         <div class="skills-row">
           <span class="tag">Scrum</span>
+        </div>
+        <h4>Idiomas</h4>
+        <div class="skills-row">
+          <span class="tag">Inglés (intermedio)</span>
         </div>
       </div>
     </div>
@@ -968,7 +1106,9 @@
         <a href="https://mail.google.com/mail/?view=cm&to=francisconportela01@gmail.com" class="btn btn-primary">
           ✉ francisconportela01@gmail.com
         </a>
-        <a href="https://github.com/Coleko22" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+        <a href="https://github.com/Coleko22" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/francisco-nahuel-portela-10526823a" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
+        <a href="CV-Francisco-Portela.pdf" download class="btn btn-ghost">Descargar CV</a>
         <a href="tel:+541123182615" class="btn btn-ghost">📞 Llamar +54 11 2318-2615</a>
       </div>
     </div>
@@ -977,8 +1117,12 @@
   <!-- FOOTER -->
   <footer>
     <p>© 2026 Francisco Nahuel Portela</p>
-    <p>Parque Avellaneda, CABA · Argentina</p>
+    <p>CABA, Argentina</p>
   </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Captura ampliada">
+    <img alt="" />
+  </div>
 
   <script>
     // Navbar scroll
@@ -998,6 +1142,21 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
+
+    // Ampliar capturas
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    document.querySelectorAll('.shot button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        lightboxImg.src = btn.dataset.full;
+        lightboxImg.alt = btn.querySelector('img').alt;
+        lightbox.classList.add('open');
+      });
+    });
+    lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') lightbox.classList.remove('open');
+    });
   </script>
 </body>
 
